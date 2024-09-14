@@ -1,0 +1,21 @@
+{
+  "name": "restrantrevamp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:backend": "cd backend && tsc", 
+    "start": "cd backend && npm start",
+    "start:prod": "cd backend && npm run build && node index.js", 
+    "seeddb": "cd backend && npm run build && ts-node seeds/place-seeder.ts && ts-node seeds/comment-seeder.ts",
+    "start:dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "install": "cd backend && npm i && cd .. && cd frontend && npm i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
